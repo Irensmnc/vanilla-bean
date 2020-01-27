@@ -10,8 +10,9 @@ export default {
     };
   },
   created() {
-    axios.get("//localhost:8080/dashboard").then(({ data }) => {
+    axios.get("//localhost:3000/dashboard").then(({ data }) => {
       this.events = data.events.events;
+      console.log(data.events.events);
       this.isLoading = false;
     });
   }

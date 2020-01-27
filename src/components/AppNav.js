@@ -4,7 +4,7 @@ export default {
     ...authComputed
   },
   methods: {
-    logout () {
+    logout() {
       this.$store.dispatch("logout");
     }
   }

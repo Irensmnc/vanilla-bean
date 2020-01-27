@@ -36,11 +36,10 @@ app.post("/register", (req, res) => {
       password: req.body.password
     };
     const data = JSON.stringify(user, null, 2);
-
     var dbUserEmail = require("./db/user.json").email;
     var errorsToSend = [];
 
-    if (dbUserEmail === user.email) {
+    if (dbUserEmail === req.body.email) {
       errorsToSend.push("An account with this email already exists.");
     }
     if (user.password.length < 5) {

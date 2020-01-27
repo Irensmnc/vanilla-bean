@@ -1,5 +1,5 @@
 export default {
-  data () {
+  data() {
     return {
       email: "",
       password: "",
@@ -7,7 +7,7 @@ export default {
     };
   },
   methods: {
-    login () {
+    login() {
       this.$store
         .dispatch("login", {
           email: this.email,
@@ -17,8 +17,8 @@ export default {
           this.$router.push({ name: "dashboard" });
         })
         .catch(err => {
-          this.error = err.response.data.error
-        })
+          this.error = err.response.data.error;
+        });
     }
   }
-}
+};

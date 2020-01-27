@@ -1,13 +1,14 @@
 import Vue from "vue";
 import Router from "vue-router";
-import VenueCreate from "./views/VenueCreate.vue";
-import VenueList from "./views/VenueList.vue";
-import VenueShow from "./views/VenueShow.vue";
-import User from "./views/User.vue";
 import Home from "./views/Home.vue";
 import Dashboard from "./views/Dashboard.vue";
 import RegisterUser from "./views/RegisterUser.vue";
 import LoginUser from "./views/LoginUser.vue";
+import VenueCreate from "./views/VenueCreate.vue";
+import VenueList from "./views/VenueList.vue";
+import VenueShow from "./views/VenueShow.vue";
+import User from "./views/User.vue";
+import GMap from "./components/Gmap";
 
 Vue.use(Router);
 
@@ -25,12 +26,11 @@ const router = new Router({
       name: "venue-show",
       component: VenueShow,
       props: true
-
     },
     {
       path: "/venue/list",
       name: "venue-list",
-      component: VenueList,
+      component: VenueList
     },
     {
       path: "/user/:username",
@@ -42,6 +42,11 @@ const router = new Router({
       path: "/",
       name: "home",
       component: Home
+    },
+    {
+      path: "/g",
+      name: "GMap",
+      component: GMap
     },
     {
       path: "/dashboard",
@@ -58,7 +63,7 @@ const router = new Router({
       path: "/login",
       name: "login",
       component: LoginUser
-    }
+    },
 
   ]
 });
@@ -69,7 +74,7 @@ router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requiresAuth) && !loggedIn) {
     next("/");
   }
-  next()
-})
+  next();
+});
 
-export default router
+export default router;
