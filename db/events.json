@@ -1,0 +1,22 @@
+{
+  "events": [
+    {
+      "id": 1234,
+      "title": "Some event",
+      "time": "some time",
+      "date": "02/02/2019"
+    },
+    {
+      "id": 1234567,
+      "title": "Some other event",
+      "time": "some other time",
+      "date": "02/06/2019"
+    },
+    {
+      "id": 569,
+      "title": "Yet another event",
+      "time": "at some different time",
+      "date": "02/06/2019"
+    }
+  ]
+}
